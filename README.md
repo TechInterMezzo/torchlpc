@@ -41,7 +41,7 @@ pip install torchlpc
 or from source
 
 ```bash
-pip install git+https://github.com/yoyololicon/torchlpc.git
+pip install git+https://github.com/DiffAPF/torchlpc.git
 ```
 
 ## Derivation of the gradients of the LPC filter
@@ -122,7 +122,7 @@ This algorithm is more efficient than [^3] because it only needs one pass of fil
 
 ## Related Projects
 
-- [torchcomp](https://github.com/yoyololicon/torchcomp): differentiable compressors that use `torchlpc` for differentiable backpropagation.
+- [torchcomp](https://github.com/iamycy/torchcomp): differentiable compressors that use `torchlpc` for differentiable backpropagation.
 - [jaxpole](https://github.com/rodrigodzf/jaxpole): equivalent implementation in JAX by @rodrigodzf.
 
 ## Citation
