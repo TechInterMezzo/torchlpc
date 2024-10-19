@@ -122,7 +122,7 @@ This algorithm is more efficient than [^3] because it only needs one pass of fil
 
 ## Related Projects
 
-- [torchcomp](https://github.com/iamycy/torchcomp): differentiable compressors that use `torchlpc` for differentiable backpropagation.
+- [torchcomp](https://github.com/DiffAPF/torchcomp): differentiable compressors that use `torchlpc` for differentiable backpropagation.
 - [jaxpole](https://github.com/rodrigodzf/jaxpole): equivalent implementation in JAX by @rodrigodzf.
 
 ## Citation
