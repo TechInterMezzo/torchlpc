@@ -34,7 +34,7 @@ def get_extensions():
     extra_compile_args = {}
     if use_openmp:
         extra_compile_args["cxx"] = ["-fopenmp"]
-        extra_link_args.append("-lgomp")
+        extra_link_args.append("-fopenmp")
 
     this_dir = os.path.abspath(os.path.dirname(__file__))
     extensions_dir = os.path.join(this_dir, library_name, "csrc")
@@ -58,9 +58,6 @@ def get_extensions():
 
     return ext_modules
 
-
-extra_link_args = []
-extra_compile_args = {}
 
 setuptools.setup(
     name=library_name,
