@@ -7,7 +7,7 @@ authors:
 title: "TorchLPC: fast, efficient, and differentiable time-varying LPC filtering in PyTorch"
 version: 0.3.1
 date-released: 2023-07-09
-url: "https://github.com/yoyololicon/torchlpc"
+url: "https://github.com/DiffAPF/torchlpc"
 keywords:
   - differentiable DSP
   - all-pole filters
