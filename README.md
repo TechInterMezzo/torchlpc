@@ -29,6 +29,9 @@ y = sample_wise_lpc(x, A)
 # Optionally, you can provide initial values for the output signal (default is 0)
 zi = torch.randn(10, 3)
 y = sample_wise_lpc(x, A, zi=zi)
+
+# Return the delay values similar to `scipy.signal.lfilter`
+y, zf = sample_wise_lpc(x, A, zi=zi, return_zf=True)
 ```
 
 
@@ -43,6 +46,22 @@ or from source
 ```bash
 pip install git+https://github.com/DiffAPF/torchlpc.git
 ```
+
+If you want to use the CUDA version, make sure you have a compatible CUDA toolkit with your PyTorch installation.
+
+### MacOS
+
+To compile with OpenMP support on MacOS, you need to instal `libomp` via Homebrew.
+Also, use `llvm@15` as the C++ compiler to ensure compatibility with OpenMP.
+
+```bash
+brew install libomp
+export CXX=$(brew --prefix llvm@15)/bin/clang++
+export LDFLAGS="-L/usr/local/opt/libomp/lib"
+export CPPFLAGS="-I/usr/local/opt/libomp/include"
+```
+
+After performing the above steps, you can install `torchlpc` as usual.
 
 ## Derivation of the gradients of the LPC filter
 
@@ -118,6 +137,7 @@ This algorithm is more efficient than [^3] because it only needs one pass of fil
 
 - [x] Use PyTorch C++ extension for faster computation.
 - [x] Use native CUDA kernels for GPU computation.
+- [ ] Support Metal for MacOS.
 - [ ] Add examples.
 
 ## Related Projects
