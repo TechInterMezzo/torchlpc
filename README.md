@@ -47,11 +47,11 @@ or from source
 pip install git+https://github.com/DiffAPF/torchlpc.git
 ```
 
-If you want to use the CUDA version, make sure you have a compatible CUDA toolkit with your PyTorch installation.
+If you want to run it on NVIDIA GPU, make sure you have CUDA toolkit installed, with a verion compatible with your PyTorch installation.
 
 ### MacOS
 
-To compile with OpenMP support on MacOS, you need to instal `libomp` via Homebrew.
+To compile with OpenMP support on MacOS, you need to install `libomp` via Homebrew.
 Also, use `llvm@15` as the C++ compiler to ensure compatibility with OpenMP.
 
 ```bash
