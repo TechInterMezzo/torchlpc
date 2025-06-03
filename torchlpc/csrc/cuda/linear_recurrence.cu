@@ -240,7 +240,7 @@ void compute_linear_recurrence(const scalar_t *decays, const scalar_t *impulses,
 
     // TODO: make user pass in working memory? This allows integration
     //       with CNMeM (used by Theano)
-    int reduction_mem_sz = 2 * n_blocks * 33 * n_dims * sizeof(float);
+    int reduction_mem_sz = 2 * n_blocks * 33 * n_dims * sizeof(scalar_t);
     scalar_t *d_reduction_mem;
     gpuErrChk(cudaMalloc(&d_reduction_mem, reduction_mem_sz));
     scalar_t *d_decay_storage = &d_reduction_mem[0 * n_blocks * 33 * n_dims];
