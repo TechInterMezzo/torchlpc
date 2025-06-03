@@ -72,7 +72,8 @@ setuptools.setup(
     install_requires=["torch>=2.0", "numpy", "numba"],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: POSIX",
     ],
     license="MIT",
     ext_modules=get_extensions(),
