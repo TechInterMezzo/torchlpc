@@ -6,6 +6,13 @@
 #include <utility>
 #include <vector>
 
+#ifdef _MSC_VER
+#include <malloc.h>
+#define alloca _alloca
+#else
+#include <alloca.h>
+#endif
+
 extern "C" {
 /* Creates a dummy empty _C module that can be imported from Python.
    The import from Python will load the .so associated with this extension
@@ -50,7 +57,8 @@ void scan_cpu(const at::Tensor &input, const at::Tensor &weights,
     auto T = input.size(1);
     auto total_size = input.numel();
 
-    std::pair<scalar_t, scalar_t> buffer[total_size];
+    auto buffer = (std::pair<scalar_t, scalar_t>*)alloca(
+        total_size * sizeof(std::pair<scalar_t, scalar_t>));
 
     const scalar_t *input_ptr = input_contiguous.const_data_ptr<scalar_t>();
     const scalar_t *initials_ptr =
